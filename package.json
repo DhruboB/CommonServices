@@ -1,0 +1,32 @@
+{
+  "name": "@dhrubob/commonservices",
+  "version": "0.1.0",
+  "description": "This is a node module containing APIs that are frequently used while creating enterprise application. Developers won't be wasting time taking decisions what different node modules are required.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DhruboB/CommonServices.git"
+  },
+  "author": "Dhrubo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DhruboB/CommonServices/issues"
+  },
+  "homepage": "https://github.com/DhruboB/CommonServices#readme",
+  "keywords": [
+    "commonservice",
+    "logging",
+    "checksum",
+    "uuid",
+    "exception",
+    "framework"
+  ],
+  "devDependencies": {
+    "bunyan": "^1.8.12",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
