@@ -1,7 +1,7 @@
 'use strict'
 
 var expect = require('chai').expect;
-var numFormatter = require('../app.js');
+var numFormatter = require('../NumberFormatter.js');
 
 // test case for function in app.js
 describe('#numFormatter',function(){

@@ -1,7 +1,8 @@
 'use strict'
 
 var expect = require('chai').expect;
-var log = require('../LoggingService.js');
+const loggingService = require('../LoggingService.js');
+var log = new loggingService();
 
 // testing Logger apis, should successfully run and print given message to output stream e.g. console 
 describe('#LoggingService',function(){
@@ -9,11 +10,12 @@ describe('#LoggingService',function(){
         log.info('Printing INFO message from mocha framework to test logger framework.');        
     })
 
-    it('should print the info message',function(){
+    it('should print the error message',function(){
+        var logger = log.getLogger();
         log.error('Printing ERROR message from mocha framework to test logger framework.');        
     })
 
-    it('should print the info message',function(){
+    it('should print the debug message',function(){
         log.debug('Printing DEBUG message from mocha framework to test logger framework.');        
     })
 
