@@ -5,7 +5,7 @@
  * @license MIT
  */
 
- 'use strict'
+'use strict'
 
 var expect = require('chai').expect;
 // const LoggingService = require('../LoggingService.js');
