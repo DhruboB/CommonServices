@@ -1,6 +1,6 @@
 'use strict';
 /**
- * This is starting script and will inculde all other services
+ * This is starting script and inculdes all other services and dependencies.
  * 
  * @author Dhrubo
  * @license MIT

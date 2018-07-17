@@ -16,26 +16,33 @@
 
 class LoggingService {
     
-    constructor(){
+    constructor(loggerName){
         // using bynyan base logging framework implementation as it provides lot of useful information with JSON format. 
         // This will be useful while parsing and extracting logging events by ELK stack. Though, it is flexible enough 
         // to change base logging implementation by changing below line.
-        var bunyan = require('bunyan');
-        this.log = bunyan.createLogger({name: 'Logger', level: 'debug'});
+        // super();
+        // uncomment below line to use "bunyan" node module
+        var logmodule = require('bunyan');
+        // uncomment below line to use "winston" node module
+        // var logmodule = require('winston');
+
+        this.log = logmodule.createLogger({name: loggerName, level: 'debug'});
         this.log.info('Project specific Logger is created.');
     }   
 
     // for INFO messages
-    info(msg){
-        this.log.info(msg);
+    info(message){
+        this.delegateLogToELK(message);
+        this.log.info(message);
     }
     // for DEBUG messages
-    debug(msg){
-        this.log.debug(msg);
+    debug(message){
+        this.log.debug(message);
     }
     // for ERROR messages
-    error(msg){
-        this.log.error(msg);
+    error(message){
+        this.delegateLogToELK(message);
+        this.log.error(message);
     }
     // exposing this api to set Logging level if at all required.
     setLevel(level){
@@ -49,8 +56,11 @@ class LoggingService {
     }
 
     // TODO 
-    // Integrating with central logging system Agent will be implemented below. So, any 
-    // log(preferrably, INFO, WARNING & ERROR) can be delegated accordingly. 
+    // Integration with central logging system (e.g. ELK) will be implemented below. So, any 
+    // log(preferrably, INFO, WARNING & ERROR) can be aynchronously delegated accordingly. 
+    delegateLogToELK(message){
+        // TODO This should be asynchronous implementation
+    }
 
 }
 
